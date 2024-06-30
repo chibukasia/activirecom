@@ -45,7 +45,7 @@ export default{
     },
     android: {
       adaptiveIcon: {
-        foregroundImage: "./assets/images/adaptive-icon.png",
+        foregroundImage: "./assets/images/recom-icon.png",
         backgroundColor: "#ffffff"
       },
       package: getUniqueIdentifier()

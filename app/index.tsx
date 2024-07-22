@@ -12,6 +12,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ActivityCard from "@/components/molecules/cards/activityCard";
+import CreateNewActivity from "@/components/molecules/forms/NewActivity";
 
 export default function Index() {
   const { height, width } = useWindowDimensions();
@@ -40,12 +41,20 @@ export default function Index() {
             
           </ImageBackground>
         </View>
-        <View>
+        <View style={{padding: 10, flex: 1, gap: 20}}>
+          <View>
+            <Text style={{fontSize: 18, fontWeight: '700', paddingBottom: 10,}}>Recommended Activities</Text>
             <ScrollView horizontal>
-              {activities.map((activity) => <View style={{width: '40%'}} key={activity.id}>
+              {activities.map((activity) => <View style={{width: '15%', backgroundColor: 'skyblue', borderRadius: 10, margin: 4}} key={activity.id}>
                 <ActivityCard name={activity.name} image={activity.image} likes={activity.likes}/>
               </View>)}
             </ScrollView>
+          </View>
+            
+            <View>
+              <Text style={{fontSize: 18, fontWeight: '700', paddingBottom: 10,}}>Add a new Activity</Text>
+              <CreateNewActivity/>
+            </View>           
         </View>
       </SafeAreaView>
     </ScrollView>
